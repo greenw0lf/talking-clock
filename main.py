@@ -54,8 +54,7 @@ def main():
     hour, minute = get_current_time()
     print("The time is " + str(hour) + ':' + str(minute))
 
-    audio_names = ['the_time_is.wav']
-    audio_names.append(get_hour_filename(hour, minute))
+    audio_names = ['the_time_is.wav', get_hour_filename(hour, minute)]
     if minute != 0:
         audio_names.append(with_or_without(minute))
     audio_names.append(get_minute_filename(minute))
