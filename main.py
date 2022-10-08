@@ -51,7 +51,7 @@ def concatenate_audio(filenames):
 
 
 def main():
-    hour, minute = get_current_time()
+    hour, minute = 12, 45
     print("The time is " + str(hour) + ':' + str(minute))
 
     audio_names = ['the_time_is.wav', get_hour_filename(hour, minute)]
