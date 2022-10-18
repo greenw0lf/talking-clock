@@ -2,6 +2,7 @@ from scipy.io import wavfile
 from playsound import playsound
 import numpy as np
 import time
+import os
 
 
 def read_audio(filename: str):
@@ -35,6 +36,8 @@ def get_minute_filename(m: int):
         return 'half.wav'
     elif m > 30:
         m = 60 - m
+    if m == 1:
+        return 'a_minute.wav'
     return str(m) + '.wav'
 
 
@@ -50,15 +53,18 @@ def concatenate_audio(filenames):
     return sr, audio
 
 
-def main():
-    hour, minute = 12, 45
+
+
+def speak_the_clock():
+    hour, minute = get_current_time()
     print("The time is " + str(hour) + ':' + str(minute))
 
     audio_names = ['the_time_is.wav', get_hour_filename(hour, minute)]
     if minute != 0:
         audio_names.append(with_or_without(minute))
     audio_names.append(get_minute_filename(minute))
-    if minute != 0 and minute != 15 and minute != 30 and minute != 45:
+    if minute != 0 and minute != 15 and minute != 30 and\
+            minute != 45 and minute != 1 and minute != 59:
         audio_names.append('minutes.wav')
 
     sr, result_audio = concatenate_audio(audio_names)
@@ -66,6 +72,4 @@ def main():
 
     wavfile.write('result.wav', sr, result_audio)
     playsound('result.wav')
-
-
-main()
+    os.remove('result.wav')
