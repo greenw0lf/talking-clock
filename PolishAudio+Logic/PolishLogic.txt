@@ -1,0 +1,8 @@
+00:00 - Its+Midnight
+00:20 - Its+20POL+And+Midnight_Past
+01:37 - Its+23POL+To+2nd
+04:21 - Its+21POL+and+4th
+12:00 - Its+12tha
+XX:00 (XX /=/ 00) - Its+xxtha
+22:46 - Its+14POL+To+23th
+23:30 - Its+half_to+Past_Midnight
