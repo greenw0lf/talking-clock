@@ -1,75 +1,54 @@
-from scipy.io import wavfile
-from playsound import playsound
-import numpy as np
-import time
-import os
+import tkinter as tk
+
+from Irish import ie_speak_the_clock
+from Polish import pl_speak_the_clock
+from Romanian import ro_speak_the_clock
+from time import strftime
+
+ClockUI = tk.Tk()
+ClockUI.configure(bg='black')
+ClockUI.geometry("1250x750")
 
 
-def read_audio(filename: str):
-    sr, audio = wavfile.read('./audio_files/' + filename)
-    return audio
+def my_time():
+    time_string = strftime('%H:%M:%S')
+    DigitalTime.config(text=time_string)
+    DigitalTime.after(1000, my_time)
 
 
-def get_sr(filename: str):
-    sr, audio = wavfile.read('./audio_files/' + filename)
-    return sr
+play_rates = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
 
 
-def get_current_time():
-    current_time = time.strftime('%H:%M')
-    split_time = current_time.split(':')
-    return int(split_time[0]), int(split_time[1])
+def slider_func(val):
+    new_val = min(play_rates, key=lambda x: abs(x - float(SpeedRate.get())))
+    SpeedRate.set(new_val)
 
 
-def get_hour_filename(hr: int, m: int):
-    if m > 30:
-        hr += 1
-    return str(hr) + '.wav'
-
-
-def get_minute_filename(m: int):
-    if m == 0:
-        return 'o_clock.wav'
-    elif m == 15 or m == 45:
-        return 'quarter.wav'
-    elif m == 30:
-        return 'half.wav'
-    elif m > 30:
-        m = 60 - m
-    if m == 1:
-        return 'a_minute.wav'
-    return str(m) + '.wav'
-
-
-def with_or_without(m: int):
-    return 'to.wav' if m > 30 else 'and.wav'
-
-
-def concatenate_audio(filenames):
-    audio = []
-    sr = get_sr(filenames[0])
-    for name in filenames:
-        audio = np.concatenate((audio, read_audio(name)))
-    return sr, audio
-
-
-
-
-def speak_the_clock():
-    hour, minute = get_current_time()
-    print("The time is " + str(hour) + ':' + str(minute))
-
-    audio_names = ['the_time_is.wav', get_hour_filename(hour, minute)]
-    if minute != 0:
-        audio_names.append(with_or_without(minute))
-    audio_names.append(get_minute_filename(minute))
-    if minute != 0 and minute != 15 and minute != 30 and\
-            minute != 45 and minute != 1 and minute != 59:
-        audio_names.append('minutes.wav')
-
-    sr, result_audio = concatenate_audio(audio_names)
-    result_audio = np.array(result_audio, dtype=np.int16)
-
-    wavfile.write('result.wav', sr, result_audio)
-    playsound('result.wav')
-    os.remove('result.wav')
+time_font = ('Terminal', 52, 'bold')
+button_font = ('Terminal', 20, 'bold')
+scale_font = ('Terminal', 14, 'bold')
+DigitalTime = tk.Label(ClockUI, font=time_font, bg='black', fg='#146cfa')
+DigitalTime.grid(row=1, column=2, pady=(100, 200))
+RoSpeakTime = tk.Button(ClockUI, text='Cât este ceasul?', bd='10',
+                              command=lambda: ro_speak_the_clock(SpeedRate
+                                                                 .get()))
+RoSpeakTime.grid(row=2, column=1, padx=(100,0))
+RoSpeakTime.configure(background='#146cfa', font=button_font)
+IeSpeakTime = tk.Button(ClockUI, text='Cén t-am é?', bd='10',
+                           command=lambda: ie_speak_the_clock(SpeedRate.get()))
+IeSpeakTime.grid(row=2, column=2)
+IeSpeakTime.configure(background='#146cfa', font=button_font)
+PlSpeakTime = tk.Button(ClockUI, text='Która godzina?', bd='10',
+                            command=lambda: pl_speak_the_clock(SpeedRate
+                                                               .get()))
+PlSpeakTime.grid(row=2, column=3)
+PlSpeakTime.configure(background='#146cfa', font=button_font)
+SpeedRate = tk.Scale(ClockUI, from_=0.5, to=2, command=slider_func,
+                     orient="horizontal", digits=3, resolution=0.25)
+SpeedRate.set(1)
+SpeedRate.grid(row=3, column=2, pady=120)
+SpeedRate.configure(bg='#146cfa', font=scale_font,
+                    label='Change the speed rate', troughcolor='black',
+                    length=246)
+my_time()
+ClockUI.mainloop()
