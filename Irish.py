@@ -47,7 +47,6 @@ def ie_speak_the_clock(speed_rate=1):
         am = 0
     else:
         am = 1
-    print("The time is " + str(hour) + ':' + str(minute))
     audio_names = ['Its.wav']
     if minute != 0:
         audio_names.append(get_minute_filename(minute))

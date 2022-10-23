@@ -45,7 +45,6 @@ def get_minute_filename(m: int):
 
 def pl_speak_the_clock(speed_rate=1):
     hour, minute = get_current_time()
-    print("The time is " + str(hour) + ':' + str(minute))
     audio_names = ['Its.wav']
     if minute != 0:
         if minute < 30:

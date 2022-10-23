@@ -1,8 +1,6 @@
-import os
-
 import librosa
 import numpy as np
-from playsound import playsound
+import simpleaudio as sa
 from scipy.io import wavfile
 
 
@@ -35,6 +33,5 @@ def play_audio(audio_names, speed_rate, lang_path):
                                                     rate=float(speed_rate))
 
     result_audio = np.array(result_audio, dtype=np.int16)
-    wavfile.write('result.wav', sr, result_audio)
-    playsound('result.wav')
-    os.remove('result.wav')
+    play_obj = sa.play_buffer(result_audio, 1, 2, sr)
+    play_obj.wait_done()
