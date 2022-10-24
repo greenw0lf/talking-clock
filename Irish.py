@@ -64,4 +64,4 @@ def ie_speak_the_clock(speed_rate=1):
         else:
             print("Error, failed am/pm conversion")
 
-    play_audio(audio_names, speed_rate, './IrishAudio+Logic/')
+    play_audio(audio_names, speed_rate, 'IrishAudio/')

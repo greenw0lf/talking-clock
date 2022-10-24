@@ -1,0 +1,9 @@
+XX:00 (XX /=/ 00) - Its+XXIRI+oclock+(am if XX <12, pm if XX=>12)
+XX:YY (YY /=/ 00) - Its+(YY if YY <= 30; (60-YY) if YY > 30)IRI+(past/to)+(XX if YY <= 30; (XX+1) if YY > 30)IRI+(am if 1 <= XX < 12, pm if XX => 12)
+00:00 - Its+Midnight
+00:13 - Its+13IRI+past+Midnight
+01:27 - Its+27IRI+past+1IRI+am
+03:45 - Its+15IRI+to+4IRI+am
+12:00 - Its+12IRI+oclock+pm
+23:45 - Its+15IRI+to+12IRI+am
+We use 12:00am before 00:00 (aka 23:31-23:59), and "Midnight" from 00:00-00:30. This is a semi arbitrary decision as the Irish themselves don't seem to have established convention, or it varies a lot regionally.

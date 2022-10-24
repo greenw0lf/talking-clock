@@ -57,4 +57,4 @@ def pl_speak_the_clock(speed_rate=1):
             audio_names.append(get_minute_filename(minute))
     audio_names.append(get_hour_filename(hour, minute))
 
-    play_audio(audio_names, speed_rate, './PolishAudio+Logic/')
+    play_audio(audio_names, speed_rate, 'PolishAudio/')

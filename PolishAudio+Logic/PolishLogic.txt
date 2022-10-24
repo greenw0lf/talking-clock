@@ -1,9 +1,0 @@
-XX:00 (XX /=/ 00) - Its+xxtha
-XX:YY (XX,YY /=/ 00) - Its+(YY if YY<=30; (60-YY) if YY>30)POL+(And or To)+(XXth if YY<30, XX+1th if YY>=30)POL
-00:00 - Its+Midnight
-00:20 - Its+20POL+And+Midnight_Past
-01:37 - Its+23POL+To+2nd
-04:21 - Its+21POL+and+4th
-12:00 - Its+12tha
-22:46 - Its+14POL+To+23th
-23:30 - Its+half_to+Past_Midnight
