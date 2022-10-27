@@ -21,6 +21,10 @@ def get_minute_filename(m: int):
 def fr_speak_the_clock(speed_rate=1):
     hour, minute = get_current_time()
 
-    audio_names = ['Its.wav',get_hour_filename(hour),get_minute_filename(minute)]
+    if minute != 0:
+        audio_names = ['Its.wav', get_hour_filename(hour),
+                       get_minute_filename(minute)]
+    else:
+        audio_names = ['Its.wav', get_hour_filename(hour)]
 
     play_audio(audio_names, speed_rate, 'FrenchAudio/')
