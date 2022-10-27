@@ -65,7 +65,7 @@ adding `o'clock` right after the hour is said.
 2. When the amount of minutes is 1 or 59, we use "a minute" instead of "one minute". Example: "The time is `<hour>` and/without a minute"
 
 Examples (Add "Ora este", equivalent to "The time is" in English, before each example):
-- 19:00 = nouă fix.
+- 09:00 = nouă fix.
 - 15:15 = cincisprezece și un sfert
 - 07:45 = opt fără un sfert
 - 13:25 = treisprezece și douăzeci și cinci de minute
