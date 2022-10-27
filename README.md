@@ -150,7 +150,11 @@ Examples (Add "Il est" before each example):
 - 4:50 - `<REPLACE WITH FRENCH>`
 
 ## GDPR Compliance
-The audio files used were generated using a TTS API. Therefore, no consent forms
-were required for the collection of this data since there were no individuals recorded by us
+The audio files used were generated using TTS APIs. For Romanian, Polish, and French, Narakeet was used (https://www.narakeet.com/languages/).
+The voice used for Romanian was Alina, for Polish, Justyna, and for French, Marion.
+As for the Irish voice lines, they were obtained from ABAIR, a voice synthesizer for Irish with support
+for 3 different accents (https://abair.ie/en/). The accent used is the Northern one, also known as Ulster Irish.
+
+No consent forms were required for the collection of this data since there were no individuals recorded by us
 to generate this speech. The data used for the speaking clock is, therefore, compliant
 with GDPR regulations.
