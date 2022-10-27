@@ -65,15 +65,15 @@ adding `o'clock` right after the hour is said.
 2. When the amount of minutes is 1 or 59, we use "a minute" instead of "one minute". Example: "The time is `<hour>` and/without a minute"
 
 Examples (Add "Ora este", equivalent to "The time is" in English, before each example):
-- 19:00 = 9 fix.
-- 15:15 = 15 și un sfert
-- 07:45 = 8 fără un sfert
-- 13:25 = 13 și 25 de minute
-- 13:07 = 13 și 7 minute
-- 14:44 = 15 fără 16 minute
-- 16:35 = 17 fără 25 de minute
-- 12:01 = 12 și un minut
-- 22:59 = 23 fără un minut
+- 19:00 = nouă fix.
+- 15:15 = cincisprezece și un sfert
+- 07:45 = opt fără un sfert
+- 13:25 = treisprezece și douăzeci și cinci de minute
+- 13:07 = treisprezece și șapte minute
+- 14:44 = cincisprezece fără șaisprezece minute
+- 16:35 = șaptesprezece fără douăzeci și cinci de minute
+- 12:01 = douăsprezece și un minut
+- 22:59 = douăzeci și trei fără un minut
 
 ### Irish
 Irish works similar to English in structure. The format is:
@@ -99,13 +99,13 @@ the code outputs "It's <60-minutes> to 12 AM".
 3. When the time is 12:00 AM, Irish people simply say "It's midnight".
 
 Examples (Add "Tá sé" before each example):
-- 00:00 - "meán oíche"
-- 00:13 - "trí déag tar éis meán oíche"
-- 23:45 - "ceathrú chun a dó dhéag iarnóin"
-- 01:27 - "fiche seacht tar éis a haon roimh nóin"
-- 03:45 - "ceathrú chun a ceathar roimh nóin"
-- 12:00 - "dó dhéag a chlog"
-- 13:30 - "leathuair tar éis a haon iarnóin"
+- 00:00 - meán oíche
+- 00:13 - trí déag tar éis meán oíche
+- 23:45 - ceathrú chun a dó dhéag iarnóin
+- 01:27 - fiche seacht tar éis a haon roimh nóin
+- 03:45 - ceathrú chun a ceathar roimh nóin
+- 12:00 - dó dhéag a chlog
+- 13:30 - leathuair tar éis a haon iarnóin
 ### Polish
 The format of telling time in Polish when the amount of minutes < 30:
 
@@ -133,13 +133,13 @@ use `half past <hour>`.
 (`Past_Midnight.wav` in the audio files).
 
 Examples (Add "Jest" before each example):
-- 00:00 - "północ"
-- 00:13 - "trzynaście po północy"
-- 23:45 - "za piętnaście północ"
-- 13:27 - "dwadzieścia siedem po trzynastej"
-- 03:45 - "za piętnaście czwarta"
-- 12:00 - "dwunasta"
-- 16:30 - "w pół do siedemnastej"
+- 00:00 - północ
+- 00:13 - trzynaście po północy
+- 23:45 - za piętnaście północ
+- 13:27 - dwadzieścia siedem po trzynastej
+- 03:45 - za piętnaście czwarta
+- 12:00 - dwunasta
+- 16:30 - w pół do siedemnastej
 ### French
 French has the most straightforward logic for telling time. It uses a 24-hour format, and there is no
 subtraction to be done or any hour increment/special keywords for "quarter" or "midnight". The format is:
@@ -154,10 +154,10 @@ French never explicitly references 12:00. It's either "midi" for midday, and "mi
 One "un" always carries and "et" in front of it. Thus the time is normally hour + "hour(s)" + and + one. This also applies to any time between 21:00-21:59, but then we use "une" as hour is feminine. Thus one says "vingt-et-une heures" (twenty and one hours)
 
 Examples (Add "Il est" before each example):
-- 12:00 - "midi"
-- 13:25 - "treize heures vingt cinq"
-- 04:50 - "quatre heures cinquante"
-- 21:01 - "vingt-et-une heures et un"
+- 12:00 - midi
+- 13:25 - treize heures vingt cinq
+- 04:50 - quatre heures cinquante
+- 21:01 - vingt-et-une heures et un
 
 ## GDPR Compliance
 The audio files used were generated using TTS APIs. For Romanian, Polish, Irish and French, Narakeet was used (https://www.narakeet.com/languages/).
