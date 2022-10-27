@@ -2,7 +2,7 @@
 
 ## Project description
 This is the speaking/talking clock that we developed in Python 3.9 for an
-assignment for the course "Introduction to Voice Technology" of the Voice Technology
+assignment for the course "Introduction to Voice Technology" as part of the Voice Technology
 MSc at RUG - Campus Fryslan.
 
 ## Requirements before installing
@@ -82,26 +82,30 @@ Irish works similar to English in structure. The format is:
 
 If the amount of minutes is above 30, we subtract it from 60 
 and the hour is incremented by 1 (as in English).
-If the amount of minutes is 15/45, we use "quarter". For 30 minutes, we use "half".
+If the amount of minutes is 15/45, we use "quarter". For 30 minutes, we use "half" (halfhour more literally; "leathuair").
 
 When it comes to hours, we use the 12-hour format with AM and PM added at the end. So,
 if 0 <= hour < 12, we add "AM" at the end, otherwise we add "PM".
 
+When counting, the prefix "a" (not an article such as a/the in English) is added in front of the number. This affects numbers which begin with a vowel, since in Irish, an "h" is added when two vowels clash together. Thus instead of saying "deich tar éis aon" (ten past one), you say "deich tar éis a haon" ("ocht" (eight) also becomes "a hocht" by this rule). The "a" isn't a strict grammatical rule, but rather convention.
+
+Counting in Irish is rather convoluted, but luckily in telling time, not that much complexity is encountered. To get a sense of how complicated it can be, have a read of this article: https://www.wikihow.com/Count-to-10-in-Irish.
+
 Special cases:
 1. When the amount of minutes is 0: "It's `<hour>` o'clock"
-2. When the hour is 0, the word "midnight" is used if the amount of minutes <= 30.
+2. There are different ways of telling time around midnight, different regions will have their own way of communicating it. Thus our programme chose one of many ways to express this. When the hour is 0, the word "midnight" is used if the amount of minutes <= 30.
 For example, "It's 17 past midnight". However, if the hour is 23 and the minute > 30,
-Irish people say "It's <60-minutes> to 12 AM". This is a semi arbitrary decision as the Irish themselves don't seem to have established convention, or it varies a lot regionally.
+the code outputs "It's <60-minutes> to 12 AM".
 3. When the time is 12:00 AM, Irish people simply say "It's midnight".
 
 Examples (Add "Tá sé" before each example):
-- 00:00 - `<REPLACE WITH IRISH>`
-- 00:13 - `<REPLACE WITH IRISH>`
-- 23:45 - `<REPLACE WITH IRISH>`
-- 01:27 - `<REPLACE WITH IRISH>`
-- 03:45 - `<REPLACE WITH IRISH>`
-- 12:00 - `<REPLACE WITH IRISH>`
-- 13:30 - `<REPLACE WITH IRISH>`
+- 00:00 - `meán oíche`
+- 00:13 - `trí déag tar éis meán oíche`
+- 23:45 - `ceathrú chun a dó dhéag iarnóin`
+- 01:27 - `fiche seacht tar éis a haon roimh nóin`
+- 03:45 - `ceathrú chun a ceathar roimh nóin`
+- 12:00 - `Dó dhéag a chlog`
+- 13:30 - `leathuair tar éis a haon iarnóin`
 ### Polish
 The format of telling time in Polish when the amount of minutes < 30:
 
@@ -124,37 +128,42 @@ Special cases:
 1. When it's 30 minutes, Polish uses the form `It's half to <hour+1>`.
 This is different from the other languages we have seen, since the others
 use `half past <hour>`.
-2. When it's exactly midnight, Polish people simply say "It's midnight", similar to Irish.
-3. A different grammatical form of the word for "midnight" is used when the minute is not zero
+2. When it's exactly midnight, Polish people simply say "It's midnight", similar to Irish. It is also acceptable to say "It's 24:00".
+3. The possessive also applies to midnight for 1 <= minutes <= 30.
 (`Past_Midnight.wav` in the audio files).
 
 Examples (Add "Jest" before each example):
-- 00:00 - `<REPLACE WITH POLISH>`
-- 00:13 - `<REPLACE WITH POLISH>`
-- 23:45 - `<REPLACE WITH POLISH>`
-- 13:27 - `<REPLACE WITH POLISH>`
-- 03:45 - `<REPLACE WITH POLISH>`
-- 12:00 - `<REPLACE WITH POLISH>`
-- 16:30 - `<REPLACE WITH POLISH>`
+- 00:00 - `Północ`
+- 00:13 - `Trzynaście po północy`
+- 23:45 - `Za piętnaście północ`
+- 13:27 - `Dwadzieścia siedem po trzynastej`
+- 03:45 - `Za piętnaście czwarta`
+- 12:00 - `Dwunasta`
+- 16:30 - `W pół do siedemnastej`
 ### French
 French has the most straightforward logic for telling time. It uses a 24-hour format, and there is no
 subtraction to be done or any hour increment/special keywords for "quarter" or "midnight". The format is:
 
 `"It's" + hour + "hour(s)" + minute`
 
-Where `hour` is the current hour, `minute` is the current minute
+Where `hour` is the current hour, `minute` is the current minute.
+
+There are two small things to note for French:
+French never explicitly references 12:00. It's either "midi" for midday, and "minuit" for midnight. These are still notated as 12 and 0 in the audio files.
+
+One "un" always carries and "et" in front of it. Thus the time is normally hour + "hour(s)" + and + one. This also applies to any time between 21:00-21:59, but then we use "une" as hour is feminine. Thus one says "vingt-et-une heures" (twenty and one hours)
 
 Examples (Add "Il est" before each example):
-- 12:00 - `<REPLACE WITH FRENCH>`
-- 13:25 - `<REPLACE WITH FRENCH>`
-- 4:50 - `<REPLACE WITH FRENCH>`
+- 12:00 - `midi`
+- 13:25 - `treize heures vingt cinq`
+- 4:50 - `quatre heures cinquante`
+- 21:01 - `vingt-et-une heures et un`
 
 ## GDPR Compliance
-The audio files used were generated using TTS APIs. For Romanian, Polish, and French, Narakeet was used (https://www.narakeet.com/languages/).
-The voice used for Romanian was Alina, for Polish, Justyna, and for French, Marion.
-As for the Irish voice lines, they were obtained from ABAIR, a voice synthesizer for Irish with support
-for 3 different accents (https://abair.ie/en/). The accent used is the Northern one, also known as Ulster Irish.
+The audio files used were generated using TTS APIs. For Romanian, Polish, Irish and French, Narakeet was used (https://www.narakeet.com/languages/).
+The voice used for Romanian was Alina, for Polish, Justyna, for Irish, Dearbhla, and for French, Marion.
+The French voice is meant to resemble Metropolitan French, whereas the Irish voice resembles Ulster (or colloquially known as Donegal) Irish.
 
 No consent forms were required for the collection of this data since there were no individuals recorded by us
-to generate this speech. The data used for the speaking clock is, therefore, compliant
+to generate this speech. The data used for the speaking clock therefore complies
 with GDPR regulations.
