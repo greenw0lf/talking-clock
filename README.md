@@ -121,7 +121,7 @@ If the time is "hour" o'clock (with the exception mentioned in the special cases
 Polish people say `It's <hour>`.
 
 The minute can determine a different grammatical case for the hour. If 1 <= minutes <= 30, we use
-the possessive form, otherwise we use the non-possessive one (in the audio file names, they
+the genitive (pertaining to "whose", belonging to an entity, possessive) form, otherwise we do not. (in the audio file names, they
 can be found as the numbers that end in "th" and "tha" respectively).
 
 Special cases:
@@ -129,7 +129,7 @@ Special cases:
 This is different from the other languages we have seen, since the others
 use `half past <hour>`.
 2. When it's exactly midnight, Polish people simply say "It's midnight", similar to Irish. It is also acceptable to say "It's 24:00".
-3. The possessive also applies to midnight for 1 <= minutes <= 30.
+3. The genitive also applies to midnight for 1 <= minutes <= 30.
 (`Past_Midnight.wav` in the audio files).
 
 Examples (Add "Jest" before each example):
@@ -141,7 +141,7 @@ Examples (Add "Jest" before each example):
 - 12:00 - dwunasta
 - 16:30 - w pół do siedemnastej
 ### French
-French has the most straightforward logic for telling time. It uses a 24-hour format, and there is no
+French, in our case, has the most straightforward logic for telling time. We opted to use the formal 24-hour format, where there is no
 subtraction to be done or any hour increment/special keywords for "quarter" or "midnight". The format is:
 
 `"It's" + hour + "hour(s)" + minute`
