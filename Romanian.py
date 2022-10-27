@@ -1,12 +1,4 @@
-import time
-
-from helpers import with_or_without, play_audio
-
-
-def get_current_time():
-    current_time = time.strftime('%H:%M')
-    split_time = current_time.split(':')
-    return int(split_time[0]), int(split_time[1])
+from helpers import with_or_without, play_audio, get_current_time
 
 
 def get_hour_filename(hr: int, m: int):
