@@ -7,6 +7,7 @@ from French import fr_speak_the_clock
 from time import strftime
 
 ClockUI = tk.Tk()
+ClockUI.title('Quattrolingo™ Clock')
 ClockUI.configure(bg='black')
 ClockUI.geometry("1280x720")
 
