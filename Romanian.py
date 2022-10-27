@@ -1,3 +1,9 @@
+"""
+This file contains code related to the language logic of time in the
+Romanian language.
+
+Authors: Dragos Balan & Hubert Matuszewski
+"""
 from helpers import with_or_without, play_audio, get_current_time
 
 
@@ -14,7 +20,7 @@ def get_minute_filename(m: int):
         return 'quarter.wav'
     elif m == 30:
         return 'half.wav'
-    elif m > 30:
+    if m > 30:
         m = 60 - m
     if m == 1:
         return 'a_minute.wav'
@@ -31,8 +37,11 @@ def ro_speak_the_clock(speed_rate=1):
     if minute != 0 and minute != 15 and minute != 30 and \
             minute != 45 and minute != 1 and minute != 59:
         if abs(minute - 30) > 10:
+            # This is simply the word for "minutes"
             audio_names.append('minutes_below_20.wav')
         else:
+            # For example, for 25 minutes, Romanians say "25 de minute" instead
+            # of "25 minute", which means "25 of minutes" more or less
             audio_names.append('minutes_20_above.wav')
 
     play_audio(audio_names, speed_rate, './RomanianAudio/')
