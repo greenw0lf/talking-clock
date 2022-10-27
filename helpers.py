@@ -1,6 +1,6 @@
 import librosa
 import numpy as np
-import simpleaudio as sa
+import pygame
 from scipy.io import wavfile
 import time
 
@@ -74,5 +74,9 @@ def play_audio(audio_names, speed_rate, lang_path):
                                                     rate=float(speed_rate))
 
     result_audio = np.array(result_audio, dtype=np.int16)
-    play_obj = sa.play_buffer(result_audio, 1, 2, sr)
-    play_obj.wait_done()
+    wavfile.write('result.wav', sr, result_audio)
+    pygame.mixer.init()
+    aud = pygame.mixer.Sound('result.wav')
+    aud.play()
+    time.sleep(aud.get_length())
+    pygame.mixer.music.unload()

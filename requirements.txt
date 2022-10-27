@@ -1,4 +1,4 @@
 librosa==0.9.2
 numpy==1.23.4
+pygame==2.1.2
 scipy==1.9.3
-simpleaudio==1.0.4
