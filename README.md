@@ -9,6 +9,9 @@ MSc at RUG - Campus Fryslan.
 Make sure you have `Python 3.9` installed. Download the latest 3.9 version from here: https://www.python.org/downloads/
 
 ## Installation
+
+<b>\### STEPS TO RUN AND INSTALL HAVE BEEN TESTED USING WINDOWS. THERE MAY BE ISSUES OCCURRING FOR LINUX AND MACOS, SO BE ADVISED! ###</b>
+
 1. Click on the green `Code` button at the top of the repository > `Download ZIP`.
 2. Extract the ZIP to the location where you want to install it on your computer.
 
